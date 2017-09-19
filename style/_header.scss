@@ -1,0 +1,60 @@
+
+.home_top {
+    background: url("//game.gtimg.cn/images/yxzj/m/m201706/images/bg/hd.jpg") no-repeat 50% 0;
+    left : 0;
+    top: 0;
+    height: 0.45rem;
+    width: 100%;
+    background-size: 100% 0.45rem;
+    z-index: 10;
+    position: fixed;
+    display: flex;justify-content: space-between;align-items: center;
+    padding: 5px;
+
+    .home_logo{
+        display: flex;justify-content: space-between;
+        div{
+            font-size: 10px;
+            display: flex;
+            flex-flow: column;font-weight: normal;
+            justify-content: space-between;
+            span:first-child {
+                color: #fff;                
+            }
+            span:last-child{
+                color: #666;
+            }
+        }
+
+        img{
+            height:0.35rem;
+            padding: 0 5px;
+        }
+    }
+
+    .home_load{
+        display: block;
+        background: url("//game.gtimg.cn/images/yxzj/m/m201706/images/bg/down.png") no-repeat center 0;
+        background-size: 0.6rem 0.24rem;        
+        width: 0.6rem;
+        height: 0.24rem;
+    }
+}
+.home_nav{
+    margin-top:0.45rem; 
+    display: flex;
+    align-items: center;
+    background: #db9e3f;
+    height: 0.42rem;
+    li{
+        flex: 1;
+        text-align: center;
+        a{
+            color: #fff;  
+            padding: 2px;
+        }
+        .active{
+            border-bottom: 2px solid #fff                      
+        }
+    }
+}
