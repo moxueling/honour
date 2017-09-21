@@ -1,7 +1,23 @@
 
-
+import Store from "../modules/flux/store"
+import action from "../modules/flux/actionCreator"
 
 class Header extends React.Component{
+    constructor(props,context){
+        super(props,context)
+        this.state={
+            path:Store.getpath()
+        }
+    }
+    updatapath(path){
+        action.updatapath(path)
+    }
+    componentWillMount(){
+        let that=this
+        Store.addChangeListener(function(){
+            that.state.path=Store.getpath()
+        })
+    }
     render(){
         return(
             <div>
@@ -18,9 +34,9 @@ class Header extends React.Component{
                     </a>
                 </h1>
                 <ul className="home_nav">
-                    <li><a href="#" className="active">首页</a></li>
-                    <li><a href="#">攻略中心</a></li>
-                    <li><a href="#">赛事中心</a></li>                        
+                    <li onClick={this.updatapath.bind(this,"main")}><a href="#/main" className={this.state.path=="main"?"active":""}>首页</a></li>
+                    <li onClick={this.updatapath.bind(this,"stra")}><a href="#/stra" className={this.state.path=="stra"?"active":""}>攻略中心</a></li>
+                    <li onClick={this.updatapath.bind(this,"match")}><a href="#/match" className={this.state.path=="match"?"active":""}>赛事中心</a></li>                        
                 </ul>
             </div>
         )

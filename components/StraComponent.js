@@ -1,4 +1,5 @@
 
+
 class StraComponent extends React.Component{
     constructor(props,context){
         super(props,context)
@@ -9,7 +10,7 @@ class StraComponent extends React.Component{
     render(){
         return(
             <div id="stra">
-                StraComponent
+                stra
             </div>
         )
     }

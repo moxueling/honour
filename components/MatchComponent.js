@@ -9,7 +9,7 @@ class MatchComponent extends React.Component{
     render(){
         return(
             <div id="match">
-                MatchComponent
+                match
             </div>
         )
     }
