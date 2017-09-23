@@ -67,7 +67,7 @@ class MainAudioComponent extends React.Component{
             
             if(this.state.height==this.state.pageheight){
                 
-                if(this.state.i<6){
+                if(this.state.i<4){
                     this.state.i++;
                     this.getTu(this.state.i)
                 }
@@ -83,7 +83,7 @@ class MainAudioComponent extends React.Component{
             
             <div className="swiper-slide">
                 {this.showTu()}
-                {this.state.i==6?<p className="p"><a href="#stra">点击查看更多</a></p>:""}
+                {this.state.i==4?<p className="p"><a href="#stra">点击查看更多</a></p>:""}
                 
             </div>
 

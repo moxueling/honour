@@ -25,7 +25,6 @@ class MainAudioComponent extends React.Component{
     }
     getAudio(){
         let that=this
-        console.log()
         if(this.props.type==0){
         Fetch.Get("http://localhost:3000/app/wmp/v3.1/?p0=18&p1=searchKeywordsList&page=1&pagesize=4&order=sIdxTime&r0=script&r1=userObj&source=app_search&type=iKeyword&id=2132&openId=&agent=&channel=&area=&&_=1505881345017",function(result){
             that.setState({

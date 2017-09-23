@@ -5,6 +5,10 @@
     background: #fff;
     overflow: hidden;
     padding-bottom: 0.1rem;
+    b{
+        font-weight: normal;
+        color: #db9e3f;
+    }
     .card-header{
         p{
             height: 0.42rem;
@@ -107,7 +111,7 @@
                 }
             }
         }
-        .audio-box{
+        .audio-box,.match-box,.mu-box{
             display: flex;
             flex-wrap: wrap;
             dl{
@@ -140,10 +144,13 @@
                 height: 0.3rem;
                 line-height: 0.3rem;
                 text-align: center;
-                color:#7a7a80;
+                
                 font-size: 10px;
                 clear: both;
                 position: relative;
+                a{
+                    color:#7a7a80;
+                }
                 &:after{
                     content: '';
                     position: absolute;
@@ -154,6 +161,18 @@
                     transform: scaleY(.5);
                 }
             }
+            .pagin1,.pagin2{
+                .swiper-slide{
+                    width:auto !important;
+                    margin: 0.1rem 0.07rem 0;
+                    color: #333;
+                    font-size: 13px;
+                }
+                .active-nav{
+                    color:#db9e3f;
+                    border-bottom: 3px solid #db9e3f;
+                }
+            } 
         }
         .tu-box{
             dl{
@@ -209,10 +228,13 @@
             height: 0.3rem;
             line-height: 0.3rem;
             text-align: center;
-            color:#7a7a80;
+            
             font-size: 10px;
             clear: both;
             position: relative;
+            a{
+                color:#7a7a80;
+            }
             &:after{
                 content: '';
                 position: absolute;

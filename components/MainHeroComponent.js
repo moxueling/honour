@@ -1,6 +1,6 @@
 
 import Fetch from "../modules/fetch"
-
+import store from "../modules/flux/store"
 class MainHeroComponent extends React.Component{
     constructor(props,context){
         super(props,context)
@@ -56,6 +56,7 @@ class MainHeroComponent extends React.Component{
             that.getHero()
         })
     }
+
     getHero(){
         let that=this
         Fetch.Get("http://localhost:3000/qq/web201605/js/herolist.json",function(result){

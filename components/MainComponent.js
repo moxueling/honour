@@ -14,7 +14,8 @@ class MainComponent extends React.Component{
             herotype:0,
             mySwiperhero:null,
             mySwiperaudio:null,
-            mySwipertu:null
+            mySwipertu:null,
+            i:1
         }
     }
    changeType(t){
@@ -49,15 +50,35 @@ class MainComponent extends React.Component{
         let arr=[];
         for(var i=0;i<5;i++){
             arr.push(
-                <MainTuComponent type={i} cid={col[i]} swiper={this.state.mySwipertu}/>
+                <MainTuComponent type={i} cid={col[i]} />
             )
         }
         return arr;
     }
     componentWillMount(){
         let that=this
-       
-       
+        // Fetch.Get("http://localhost:3000/abc/wmp/data/js/v3/WMP_PARENTTYPE_GW_18.js?_=1506070532406",function(result){
+        //     //http://ams.qq.com/abc
+        //     console.log(result)
+        //     console.log(2)
+        // })
+        Fetch.Get("http://localhost:3000/app/wmp/v3.1/?p0=18&p1=searchKeywordsList&page=1&pagesize=4&order=sIdxTime&r0=script&r1=userObj&source=app_search&type=iKeyword&id=2504&openId=&agent=&channel=&area=&&_=1506085885441",function(result){
+            //http://ams.qq.com/abc
+            console.log(result.data)
+            console.log(2)
+        })
+    //     Fetch.Get("http://localhost:3000/app/wmp/v3.1/?p0=18&p1=searchKeywordsList&page=1&pagesize=4&order=sIdxTime&r0=script&r1=userObj&source=app_search&type=iType&id=862&openId=&agent=&channel=&area=&&_=1506081783598"
+    //     ,function(result){
+    //         //http://ams.qq.com/abc
+    //         console.log(result)
+    //         console.log(3)
+    //     })
+    //     Fetch.Get("http://localhost:3000/app/wmp/v3.1/?p0=18&p1=searchNewsKeywordsList&page=1&pagesize=10&order=sIdxTime&r0=script&r1=NewsObj&source=app_news_search&openId=&agent=&channel=&area=&&_=1506068104960",function(result){
+    //         //http://ams.qq.com/abc
+    //         console.log(result)
+    //         console.log("搜索页面")
+    //     })
+
     }
     componentDidMount(){
         let that=this;
@@ -88,22 +109,26 @@ class MainComponent extends React.Component{
                 return '<li class="pull-left ' + className + '">'+coltu[index]+'</li>';
             }
         })
-        //  setTimeout(()=>{
-        //      this.setState({
-        //          herotype:0
-        //      })
-        //  },1000)
+         setTimeout(()=>{
+             this.setState({
+                 herotype:0
+             })
+         },1000)
         
         function fn(){
-            var i=1;
             that.state.height=document.body.scrollTop+document.documentElement.clientHeight;
             that.state.pageheight=document.documentElement.scrollHeight;
             
             if(that.state.height==that.state.pageheight){ 
-                i++;
-                that.setState({
-                    herotype:0
-                })
+               if(that.state.i<7){
+                   that.state.i++
+                   that.setState({
+                        herotype:0
+                    })
+               }else{
+                   removeEventListener("scroll",fn)
+               }
+                
             }
         }
          window.addEventListener("scroll",fn)
