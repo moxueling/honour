@@ -1,0 +1,124 @@
+
+
+#hot_video{
+    background: #fff;   
+    margin-top: 10px;
+    padding: 0 10px;
+    h3{
+        height: 0.5rem;
+        line-height: 0.5rem;
+        padding-left: 0.2rem;
+        background: url('//game.gtimg.cn/images/yxzj/m/m201706/images/strategy/icon_01.png') no-repeat 0 0.2rem;
+        background-size: .15rem .12rem;
+        position: relative;
+        &:before {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            display: block;
+            width: 100%;
+            height: 1px;
+            background: #d4d9de;
+            transform: scaleY(0.5);
+        }   
+    }
+
+    .hot_video{
+        // height: 4.4rem;
+        height: 2.05rem;
+
+        li{
+            padding: 9px 0;
+            position: relative;
+            &:before {
+                content: '';
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                display: block;
+                width: 100%;
+                height: 1px;
+                background: #d4d9de;
+                transform: scaleY(0.5);
+            }  
+        }
+
+        .pagination_hot{
+            top: 14px;
+            left: 142px;
+
+            .swiper-pagination-bullet{
+                height: 0;
+                width: 18px;
+                background: #fff;
+            }
+            .swiper-pagination-bullet-active{
+                color: #db9e3f;
+            }
+        }
+
+        .first_li{
+            display: flex;
+            img{
+                height: 0.645rem;
+                margin-right: 10px;
+            }
+            p{
+                font-size: 13px;
+                color: #343440;
+                line-height: 1.8;
+                height: 0.45rem;
+            }
+
+            h6{
+                font-weight: normal;
+                margin-top: 4px;
+                color: #7a7a80;
+                span{
+                    padding-left:0.2rem;
+
+                    &:nth-child(1){
+                        background: url('//game.gtimg.cn/images/yxzj/m/m201706/images/strategy/video-fre.png') no-repeat 4px 3px;
+                        background-size: .12rem .09rem;
+                    }
+                    &:nth-child(2){
+                        background: url('//game.gtimg.cn/images/yxzj/m/m201706/images/strategy/video-tm.png') no-repeat 4px 3px;
+                        background-size: .12rem .12rem;
+                    }
+                }
+            }
+        }
+
+        .list_{
+            display: flex;
+            justify-content: space-between;
+
+            p{
+                width: 2.95rem;
+
+                overflow: hidden;
+                white-space: nowrap;
+                text-overflow: ellipsis;
+                font-size: 12px;
+                color: #343440;
+            }
+            span{
+                font-size: 10px;
+                color: #7a7a80;                
+                padding-left:0.2rem;                
+                background: url('//game.gtimg.cn/images/yxzj/m/m201706/images/strategy/video-fre.png') no-repeat 4px 3px;
+                background-size: .12rem .09rem;
+            }
+        }
+        
+    }
+    h5{
+        font-weight: normal;
+        text-align: center;
+        color: #7a7a80;
+        height: 0.33rem;
+        line-height: 0.33rem;
+        font-size: 12px;
+    }
+}
